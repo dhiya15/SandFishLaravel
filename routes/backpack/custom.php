@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CaravanCrudController;
 use App\Http\Controllers\Admin\MagasinCrudController;
 use App\Http\Controllers\Admin\RegistrationCrudController;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,12 @@ Route::group([
     Route::get('switch-category1/{id}', [RegistrationCrudController::class, 'switchCategory1']);
     Route::get('switch-category2/{id}', [RegistrationCrudController::class, 'switchCategory2']);
     Route::get('switch-category3/{id}', [RegistrationCrudController::class, 'switchCategory3']);
+    Route::get('accept-caravan-student/{id}', [CaravanCrudController::class, 'acceptStudent']);
+    Route::get('refuse-caravan-student/{id}', [CaravanCrudController::class, 'refuseStudent']);
+    Route::get('switch-caravan-category1/{id}', [CaravanCrudController::class, 'switchCategory1']);
+    Route::get('switch-caravan-category2/{id}', [CaravanCrudController::class, 'switchCategory2']);
+    Route::get('switch-caravan-category3/{id}', [CaravanCrudController::class, 'switchCategory3']);
     Route::crud('user', 'UserCrudController');
     Route::crud('registration', 'RegistrationCrudController');
+    Route::crud('caravan', 'CaravanCrudController');
 }); // this should be the absolute last line of this file
